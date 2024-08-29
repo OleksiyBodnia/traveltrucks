@@ -1,12 +1,22 @@
-import Grid3x3 from './components/icons/Grid3x3.jsx';
+import { lazy, Suspense } from 'react';
+import Layout from './components/shared/Layout/Layout.jsx';
+import { Route, Routes } from 'react-router-dom';
+
+const HomePage = lazy(() => import('./pages/HomePage/HomePage.jsx'));
+const Catalog = lazy(() => import('./pages/Catalog/Catalog.jsx'));
+const TruckPage = lazy(() => import('./pages/TruckPage/TruckPage.jsx'));
 
 function App() {
   return (
-    <>
-      <p>
-        Hello world <Grid3x3 width={20} height={20} />
-      </p>
-    </>
+    <Layout>
+      <Suspense fallback={null}>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/catalog" element={<Catalog />} />
+          <Route path="/catalog/:id" element={<TruckPage />} />
+        </Routes>
+      </Suspense>
+    </Layout>
   );
 }
 

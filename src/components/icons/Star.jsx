@@ -1,8 +1,8 @@
-const Star = ({ width = '32px', height = '32px', ...props }) => (
+const Star = ({ width = '16px', height = '16px', ...props }) => (
   <svg
     width={width}
     height={height}
-    viewBox="0 0 32 32"
+    viewBox="0 0 16 16"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     {...props}
