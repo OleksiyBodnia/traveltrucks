@@ -1,8 +1,8 @@
 .container {
-  background-image: url('/src/assets/Picture.png');
+  /* background-image: url('/src/assets/Picture.png');
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: top left;
+  background-position: top left; */
   background: linear-gradient(
       0deg,
       rgba(0, 0, 0, 0.2) 0%,
@@ -10,6 +10,17 @@
     ),
     url('/src/assets/Picture.png') lightgray 0px -192.086px / 100% 138.099% no-repeat;
   padding: 260px 64px;
+}
+
+@media only screen and (min-resolution: 2dppx) {
+  .container {
+    background: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.2) 0%,
+        rgba(0, 0, 0, 0.2) 100%
+      ),
+      url('/src/assets/Picture@2x.png') lightgray 0px -192.086px / 100% 138.099% no-repeat;
+  }
 }
 
 .title {
