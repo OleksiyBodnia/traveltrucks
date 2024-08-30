@@ -46,11 +46,7 @@ export default function Form() {
 
   const handleSendForm = e => {
     e.preventDefault();
-    toast.success(
-      `Your data has been sent successfully! {name: ${formState.name}, email: ${
-        formState.email
-      }}, date: ${formatDate(formState.startDate, formState.endDate)}`
-    );
+    toast.success(`Your data has been sent successfully!`);
 
     setFormState({
       startDate: new Date(),

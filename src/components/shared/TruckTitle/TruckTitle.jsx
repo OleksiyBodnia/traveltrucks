@@ -23,7 +23,7 @@ export default function TruckTitle() {
               {data.location}
             </span>
           </div>
-          <p className={styles.price}>€{data.price}</p>
+          <p className={styles.price}>€{data.price}.00</p>
         </div>
       ) : null}
     </>

@@ -5,7 +5,7 @@ export default function NavigationBar() {
   return (
     <div className={styles.container}>
       <img
-        src="../../../assets/Logo.png"
+        src="/public/Logo.png"
         alt="logotype"
         className={styles.img}
       />

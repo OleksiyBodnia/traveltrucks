@@ -1,8 +1,8 @@
-const RedHeart = ({ width = '32px', height = '32px', ...props }) => (
+const RedHeart = ({ width = '26px', height = '32px', ...props }) => (
   <svg
     width={width}
     height={height}
-    viewBox="0 0 32 32"
+    viewBox="0 0 26 24"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     {...props}

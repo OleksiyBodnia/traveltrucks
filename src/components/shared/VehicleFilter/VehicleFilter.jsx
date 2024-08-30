@@ -26,6 +26,8 @@ import {
   toggleTV,
 } from '../../../redux/filter/slice.js';
 import toast from 'react-hot-toast';
+import { selectIsLoading } from '../../../redux/catalog/selectors.js';
+import Loader from "../Loader/Loader.jsx"
 
 export default function VehicleFilter() {
   const form = useSelector(selectForm);
@@ -34,6 +36,7 @@ export default function VehicleFilter() {
   const kitchen = useSelector(selectKitchen);
   const tv = useSelector(selectTV);
   const bathroom = useSelector(selectBathroom);
+  const isLoading = useSelector(selectIsLoading);
   const dispath = useDispatch();
 
   async function getAllTrucks() {
@@ -93,12 +96,12 @@ export default function VehicleFilter() {
       <div className={styles.type}>
         <div
           className={
-            form === 'alcove' ? styles.typeItemActive : styles.typeItem
+            form === 'panelTruck' ? styles.typeItemActive : styles.typeItem
           }
           onClick={() =>
-            form === 'alcove'
+            form === 'panelTruck'
               ? dispath(setForm(''))
-              : dispath(setForm('alcove'))
+              : dispath(setForm('panelTruck'))
           }
         >
           <Grid1x2 />
@@ -119,12 +122,12 @@ export default function VehicleFilter() {
         </div>
         <div
           className={
-            form === 'panelTruck' ? styles.typeItemActive : styles.typeItem
+            form === 'alcove' ? styles.typeItemActive : styles.typeItem
           }
           onClick={() =>
-            form === 'panelTruck'
+            form === 'alcove'
               ? dispath(setForm(''))
-              : dispath(setForm('panelTruck'))
+              : dispath(setForm('alcove'))
           }
         >
           <Grid />
@@ -132,8 +135,8 @@ export default function VehicleFilter() {
         </div>
       </div>
 
-      <button className={styles.searchBtn} onClick={getAllTrucks}>
-        Search
+      <button className={styles.searchBtn} onClick={getAllTrucks} disabled={isLoading}>
+        {isLoading ? <Loader width={20} height={20} color='var(--White)'/> :"Search"}
       </button>
     </div>
   );

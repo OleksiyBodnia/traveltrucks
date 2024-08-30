@@ -1,5 +1,5 @@
 .container {
-  width: 100%;
+  width: 888px;
   height: 368px;
   display: flex;
   padding: 24px;
@@ -38,6 +38,10 @@
   font-style: normal;
   font-weight: 600;
   line-height: 32px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
 }
 
 .price {
@@ -127,4 +131,11 @@
 
 .showMoreBtn:hover {
   background: var(--Button-Hover, #d84343);
+}
+
+.priceWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
 }
