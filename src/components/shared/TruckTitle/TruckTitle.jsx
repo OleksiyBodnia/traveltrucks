@@ -16,7 +16,9 @@ export default function TruckTitle() {
               <div className={styles.star}>
                 <YellowStar />
               </div>
-              {`${data.rating}(${data.reviews ? data.reviews.length : null} Reviews)`}
+              <span className={styles.reviews}>{`${data.rating}(${
+                data.reviews ? data.reviews.length : null
+              } Reviews)`}</span>
             </span>
             <span className={styles.location}>
               <LocationActive width={16} height={16} />

@@ -25,6 +25,16 @@
   gap: 16px;
   margin-bottom: 16px;
 }
+
+.reviews{
+  color: var(--Main, #101828);
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+  text-decoration-line: underline;
+}
 .location {
   color: var(--Main, #101828);
   font-family: Inter;
